@@ -1,5 +1,4 @@
 import pandas as pd
-from create_mappings import create_mappings
 
 def test_data(data):
     """
