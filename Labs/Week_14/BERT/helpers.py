@@ -55,9 +55,9 @@ def plot_training_history(history):
     
     # 2. Start Position Loss
     plt.subplot(2, 2, 2)
-    plt.plot(history.history['start_positions_loss'], 
+    plt.plot(history.history['start_logits_loss'], 
              label='Start Position Training Loss')
-    plt.plot(history.history['val_start_positions_loss'], 
+    plt.plot(history.history['val_start_logits_loss'], 
              label='Start Position Validation Loss')
     plt.title('Start Position Loss')
     plt.xlabel('Epoch')
@@ -66,9 +66,9 @@ def plot_training_history(history):
     
     # 3. End Position Loss
     plt.subplot(2, 2, 3)
-    plt.plot(history.history['end_positions_loss'], 
+    plt.plot(history.history['end_logits_loss'], 
              label='End Position Training Loss')
-    plt.plot(history.history['val_end_positions_loss'], 
+    plt.plot(history.history['val_end_logits_loss'], 
              label='End Position Validation Loss')
     plt.title('End Position Loss')
     plt.xlabel('Epoch')
@@ -77,7 +77,7 @@ def plot_training_history(history):
     
     # 4. Combined Metrics
     plt.subplot(2, 2, 4)
-    metrics = ['loss', 'start_positions_loss', 'end_positions_loss']
+    metrics = ['loss', 'start_logits_loss', 'end_logits_loss']
     for metric in metrics:
         plt.plot(history.history[metric], label=f'Training {metric}')
     plt.title('Combined Training Metrics')
